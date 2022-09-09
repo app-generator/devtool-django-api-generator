@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.home'  # Enable the inner home (home)
+    'apps.home',  # Enable the inner home (home)
+    'apps'
 ]
 
 MIDDLEWARE = [
@@ -143,6 +144,11 @@ STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'apps/static'),
 )
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#############################################################
+#############################################################
 
-#############################################################
-#############################################################
+API_GENERATOR = {
+    'books': "Book",
+    'persons': "Person",
+}
