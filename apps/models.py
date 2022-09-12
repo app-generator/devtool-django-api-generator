@@ -9,3 +9,6 @@ class Book(models.Model):
 class Person(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField(default=18)
+
+class City(models.Model):
+    name = models.CharField(max_length=20)

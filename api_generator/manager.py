@@ -2,16 +2,16 @@ from core.settings import API_GENERATOR
 
 
 def generate_serializer_file():
-    with open('serializers/serializers_structure', 'r') as serializers_structure_file:
+    with open('api_generator/serializers/serializers_structure', 'r') as serializers_structure_file:
         serializers_structure = serializers_structure_file.read()
 
-    with open('serializers/library_imports', 'r') as library_imports_file:
+    with open('api_generator/serializers/library_imports', 'r') as library_imports_file:
         library_imports = library_imports_file.read()
 
-    with open('serializers/base_imports', 'r') as base_imports_file:
+    with open('api_generator/serializers/base_imports', 'r') as base_imports_file:
         base_imports = base_imports_file.read()
 
-    with open('serializers/base_serializer', 'r') as base_serializer_file:
+    with open('api_generator/serializers/base_serializer', 'r') as base_serializer_file:
         base_serializer = base_serializer_file.read()
 
     project_imports = base_imports.format(models_name=", ".join(API_GENERATOR.values()))
@@ -22,23 +22,23 @@ def generate_serializer_file():
         serializers=serializers
     )
 
-    with open('../apps/api/serializers.py', 'w') as serializers_py:
+    with open('apps/api/serializers.py', 'w') as serializers_py:
         serializers_py.write(generation)
 
     return generation
 
 
 def generate_views_file():
-    with open('views/views_structure', 'r') as views_structure_file:
+    with open('api_generator/views/views_structure', 'r') as views_structure_file:
         views_structure = views_structure_file.read()
 
-    with open('views/library_imports', 'r') as library_imports_file:
+    with open('api_generator/views/library_imports', 'r') as library_imports_file:
         library_imports = library_imports_file.read()
 
-    with open('views/base_imports', 'r') as base_imports_file:
+    with open('api_generator/views/base_imports', 'r') as base_imports_file:
         base_imports = base_imports_file.read()
 
-    with open('views/base_view', 'r') as base_views_file:
+    with open('api_generator/views/base_view', 'r') as base_views_file:
         base_views = base_views_file.read()
     project_imports = base_imports.format(
         models_name=', '.join(API_GENERATOR.values()),
@@ -55,7 +55,7 @@ def generate_views_file():
         views=views
     )
 
-    with open('../apps/api/views.py', 'w') as views_py:
+    with open('apps/api/views.py', 'w') as views_py:
         views_py.write(generation)
 
     return generation
@@ -63,13 +63,13 @@ def generate_views_file():
 
 def generate_urls_file():
     urls_file_structure = """{library_imports}\n{project_imports}\nurlpatterns = [\n{paths}\n\n]"""
-    with open('urls/library_imports', 'r') as library_imports_file:
+    with open('api_generator/urls/library_imports', 'r') as library_imports_file:
         library_imports = library_imports_file.read()
 
-    with open('urls/base_imports', 'r') as base_imports_file:
+    with open('api_generator/urls/base_imports', 'r') as base_imports_file:
         base_imports = base_imports_file.read()
 
-    with open('urls/base_url_path', 'r') as base_urls_file:
+    with open('api_generator/urls/base_url_path', 'r') as base_urls_file:
         base_urls_path = base_urls_file.read()
 
     views_name = ", ".join(list(map(lambda model_name: f'{model_name}View', API_GENERATOR.values())))
@@ -82,17 +82,7 @@ def generate_urls_file():
         project_imports=base_imports.format(views_name=views_name),
         paths=paths
     )
-    with open('../apps/api/urls.py', 'w') as urls_py:
+    with open('apps/api/urls.py', 'w') as urls_py:
         urls_py.write(generation)
 
     return generation
-
-
-def main():
-    generate_serializer_file()
-    generate_views_file()
-    generate_urls_file()
-
-
-if __name__ == '__main__':
-    main()
