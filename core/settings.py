@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.home',  # Enable the inner home (home)
-    'apps'
+    'apps',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -151,5 +153,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 API_GENERATOR = {
     'books': "Book",
     'persons': "Person",
-    # 'cities': "City",
+    'cities': "City",
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication'
+    ],
 }

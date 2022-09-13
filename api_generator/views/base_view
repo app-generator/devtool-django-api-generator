@@ -1,4 +1,7 @@
 class {model_name}View(APIView):
+
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
     def post(self, request):
         serializer = {serializer_name}(data=request.POST)
         if not serializer.is_valid():
