@@ -280,13 +280,13 @@ API_GENERATOR = {
        you should add token to all Post, Put and Delete requests with this pattern
        ```
        {
-          "Authentication": "token {your token}"
+          "Authorization": "token {your token}"
        }
        ```
        example:
        ```
        {
-          "Authentication": "token b36705e1078b4b67d4dc4f1388a1aee4a754d4cd"
+          "Authorization": "token b36705e1078b4b67d4dc4f1388a1aee4a754d4cd"
        }
        ```
     2. **Basic Authentication**: if you log in by UI, you can also send requests to apis without token. (because you are authorized by basic authentication) 
