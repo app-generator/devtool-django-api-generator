@@ -104,12 +104,14 @@ document.getElementsByTagName('form')[0].onsubmit = (e) => {
 
   e.preventDefault()
   const formData = new FormData(e.target)
+  const username = formData.get('username');
+  const password = formData.get('password');
 
   fetch('/login/jwt/',{
       method: 'POST',
       body: JSON.stringify({
-          username: 'test',
-          password: 'Pass12__'
+          username: username,
+          password: password
       }),
       headers: {
           'Content-Type': 'application/json'
