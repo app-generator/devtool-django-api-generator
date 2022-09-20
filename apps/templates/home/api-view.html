@@ -103,6 +103,38 @@
               </div>
             </div>
         </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-6 mb-lg-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="d-flex flex-column h-100">
+                    <p class="mb-1 pt-2 text-bold">
+                        API Sample
+                    </p>
+                    <h5 class="font-weight-bolder">
+                        Delete BOOK
+                    </h5>
+                    <p class="mb-5">
+                        <form id="delete-form" class="d-flex flex-column" >{% csrf_token %}
+                          <label for="id">Id</label>
+                          <input name="id" id="id" />
+
+                          <input type="submit" class="mt-3" value="submit">
+                        </form>
+                        <div id="delete-error" class="mt-3 text-danger"></div>
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
   
       </div>
 
@@ -186,6 +218,30 @@
                 })
                 .catch((err) => {
                     document.getElementById('update-error').textContent = err
+                })
+        }
+
+        document.getElementById('delete-form').onsubmit = (e) => {
+            e.preventDefault()
+            const formData = new FormData(e.target)
+
+            fetch(`/api/books/${formData.get('id')}/`,{
+                method: 'DELETE',
+                body: formData,
+                headers: {"X-CSRFToken": formData.get("csrfmiddlewaretoken")}
+            })
+                .then((response) => {
+                    if(!response.ok)
+                        return response.text().then(text => { throw new Error(text) })
+                    else
+                        return response.json()
+                })
+                .then((res) => {
+                    console.log(res)
+                    location.reload()
+                })
+                .catch((err) => {
+                    document.getElementById('delete-error').textContent = err
                 })
         }
   </script>
