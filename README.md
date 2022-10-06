@@ -34,7 +34,7 @@ API_GENERATOR = {
 > Migrate Database
 
 ```bash
-$ python manage.py makemigration apps
+$ python manage.py makemigrations
 $ python manage.py migrate
 ```
 

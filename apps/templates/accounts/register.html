@@ -25,12 +25,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-5 text-center mx-auto">
-              <h1 class="text-white mb-2 mt-6">
-                Django Soft - Register
-              </h1>
-              <p class="text-lead text-white">
-                
-              </p>
+              <h1 class="text-white mb-2 mt-5">Welcome!</h1>
             </div>
           </div>
         </div>
@@ -39,8 +34,11 @@
         <div class="row mt-lg-n10 mt-md-n11 mt-n10">
           <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
             <div class="card z-index-0">
+
               <div class="card-header text-center pt-4">
+                <h5>Sign UP</h5>
               </div>
+
               <div class="row px-xl-5 px-sm-4 px-3">
                 
                 <div class="mt-2 position-relative text-center">
@@ -52,62 +50,60 @@
                     {% endif %}  
                   </p>
                 </div>
+
               </div>
+
               <div class="card-body">
 
                 {% if success %} 
                 
-                  <p class="text-sm mt-3 mb-0 text-center">
-
+                  <p class="text-sm mt-3 mb-0 text-center"> 
                     <div class="text-center">
                       <a href="{% url 'login' %}" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign IN</a>
-                    </div>
-
+                    </div> 
                   </p>
 
                 {% else %}
 
                   <form role="form text-left" method="post" action="">
-                      
-                    {% csrf_token %}
 
-                    <label>Username</label>
-                    <div class="mb-3">
-                      {{ form.username }}
-                    </div>
-                    <span class="text-error">{{ form.username.errors }}</span>
-  
-                    <label>Email</label>
-                    <div class="mb-3">
-                      {{ form.email }}
-                    </div>
-                    <span class="text-error">{{ form.email.errors }}</span>
-                    
-                    <label>Password</label>
-                    <div class="mb-3">
-                      {{ form.password1 }}
-                    </div>
-                    <span class="text-error">{{ form.password1.errors }}</span>
-  
-                    <label>Password Check</label>
-                    <div class="mb-3">
-                      {{ form.password2 }}
-                    </div>
-                    <span class="text-error">{{ form.password2.errors }}</span>
+                      {% csrf_token %}
 
-                    <div class="text-center">
-                      <button type="submit" name="register" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign UP</button>
-                    </div>
+                      <label>Username</label>
+                      <div class="mb-3">
+                        {{ form.username }}
+                      </div>
+                      <span class="text-danger">{{ form.username.errors }}</span>
 
-                    <p class="text-sm mt-3 mb-0 text-center">
-                      Have an account? <a href="{% url 'login' %}" class="text-dark font-weight-bolder">Sign IN</a>
-                    </p>
+                      <label>Email</label>
+                      <div class="mb-3">
+                        {{ form.email }}
+                      </div>
+                      <span class="text-danger">{{ form.email.errors }}</span>
+
+                      <label>Password</label>
+                      <div class="mb-3">
+                        {{ form.password1 }}
+                      </div>
+                      <span class="text-danger">{{ form.password1.errors }}</span>
+
+                      <label>Password</label>
+                      <div class="mb-3">
+                        {{ form.password2 }}
+                      </div>
+                      <span class="text-danger">{{ form.password2.errors }}</span>                      
+
+                      <div class="text-center">
+                        <button type="submit" name="register" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign UP</button>
+                      </div>
+
+                      <div class="text-center">
+                        <a href="{% url 'login' %}" class="btn bg-gradient-secondary w-100 mt-4 mb-0">Sign IN</a>
+                      </div>                
 
                   </form>
 
                 {% endif %}
-
-
 
               </div>
             </div>
