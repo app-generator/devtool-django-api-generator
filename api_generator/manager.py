@@ -1,5 +1,9 @@
-from core.settings import API_GENERATOR
+# -*- encoding: utf-8 -*-
+"""
+Copyright (c) 2019 - present AppSeed.us
+"""
 
+from core.settings import API_GENERATOR
 
 def generate_serializer_file():
     with open('api_generator/serializers/serializers_structure', 'r') as serializers_structure_file:

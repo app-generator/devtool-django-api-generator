@@ -152,8 +152,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 API_GENERATOR = {
     'books': "Book",
-    'people': "Person",
-    'cities': "City",
 }
 
 REST_FRAMEWORK = {

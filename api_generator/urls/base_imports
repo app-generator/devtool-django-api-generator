@@ -1,1 +1,2 @@
-from apps.api.views import {views_name}
+from apps.api.views import *
+

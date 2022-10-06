@@ -1,2 +1,2 @@
-from apps.api.serializers import {serializers_name}
-from apps.models import {models_name}
+from apps.api.serializers import *
+from apps.models import *
