@@ -1,4 +1,4 @@
-# Flask API Generator
+# Django API Generator
 
 The tool is able to generate APIs using Flask, Flask-RestX stack with a minimum effort. For newcomers, Flask is a leading backend framework used to code from simple websites and APIs to complex eCommerce solutions.
 
@@ -9,7 +9,7 @@ The tool is able to generate APIs using Flask, Flask-RestX stack with a minimum 
 
 ## Video Presentation
 
-https://user-images.githubusercontent.com/51070104/194278839-8ea8e6e1-5ce9-4c53-9b8a-442a208c46d3.mp4
+https://user-images.githubusercontent.com/51070104/194334755-b5cc63d7-4b64-45b5-bf8e-da92d73bc4ba.mp4
 
 <br />
 
