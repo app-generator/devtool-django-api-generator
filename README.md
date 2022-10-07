@@ -7,6 +7,34 @@ The tool is able to `generate APIs` using **Django & DRF** stack with a minimum 
 
 <br />
 
+## ✨ Quick start in `Docker`
+
+> 👉 **Step 1** - Download the code from the GH repository (using `GIT`) 
+
+```bash
+$ git clone https://github.com/app-generator/devtool-django-api-generator.git
+$ cd devtool-django-api-generator
+```
+
+<br />
+
+> 👉 **Step 2** - Start the APP in `Docker`
+
+```bash
+$ docker-compose up --build 
+```
+
+Visit `http://localhost:5085` in your browser. By default a simple [Books](./apps/models.py) Model is used as sample.  
+
+- The generated DRF API is live at `http://localhost:5085/api/books`
+- Registered users can interact with the API using the `API-View` page
+
+<br />
+
+![Django API Generator - API View page for Books Model.](https://user-images.githubusercontent.com/51070104/194476781-6476de62-191a-48e8-8730-344c2d63f9d0.png) 
+
+<br />
+
 ## How It Works
 
 > 👉 **Step #1** - Define models in `apps/models.py`
