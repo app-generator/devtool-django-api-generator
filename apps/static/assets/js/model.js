@@ -11,11 +11,15 @@ document.querySelector('.list-group').addEventListener('click' , (e) => {
 })
 
 const deleteAction = (id) => {
+    
     const modelName = 'books'
+    var csrftoken = Cookies.get('csrftoken');
+
     fetch(`/api/${modelName}/${id}/`,{
         method: 'DELETE',
         headers: {
-            'Authorization': `token ${token}`
+            'Authorization': `token ${token}`,
+            'X-CSRFToken': `${csrftoken}`,
         }
     })
         .then(response => response.json())
