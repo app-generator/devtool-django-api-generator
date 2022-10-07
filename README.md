@@ -11,21 +11,27 @@ The tool is able to `generate APIs` using **Django & DRF** stack with a minimum 
 
 > 👉 **Step #1** - Define models in `apps/models.py`
 
+By default, the project comes with a simple `Books` model: 
+
+```python
+class Book(models.Model):
+
+    name = models.CharField(max_length=100)
+```
+
 <br />
 
-> Register the model in `core/settings.py` with this pattern:
+> 👉 **Step #2** -  `Register the model` in `core/settings.py` (API_GENERATOR section)
 
 ```python
 API_GENERATOR = {
-    'endpoint': 'ModelName',
-    'books': "Book",
-    'cities': "City",
+    'books': "Book", # <-- Books model provided as sample
 }
 ```
 
 <br />
 
-> 👉 **Step #2** - `Migrate Database`
+> 👉 **Step #3** - `Migrate Database`
 
 ```bash
 $ python manage.py makemigrations
@@ -34,7 +40,7 @@ $ python manage.py migrate
 
 <br />
 
-> 👉 **Step #3** - `Generate API` 
+> 👉 **Step #4** - `Generate API` 
 
 ```bash
 $ python manage.py generate-api
@@ -44,7 +50,7 @@ $ python manage.py generate-api
 
 <br />
 
-> 👉 **Step #4** - `Use the API` 
+> 👉 **Step #5** - `Use the API` 
 
 * Create a book by `POST` request to `/api/books/`
 * Get book that has id = 2 by `GET` request to `/api/books/2/`
@@ -54,7 +60,7 @@ $ python manage.py generate-api
 
 <br />
 
-> 👉 **Step #5** - API Authentication
+> 👉 **Step #6** - API Authentication
 
 There are 2 models of authentication that you can use.
 
@@ -90,7 +96,6 @@ Example:
 For users authenticated in the app. 
 
 <br />
-
 
 --- 
 **Django API Generator** - Developer tool provided by [AppSeed](https://appseed.us)
