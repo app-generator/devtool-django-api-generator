@@ -7,7 +7,7 @@ The tool is able to `generate APIs` using **Django & DRF** stack with a minimum 
 
 <br />
 
-## ✨ Quick start in `Docker`
+## Quick start in `Docker`
 
 > 👉 **Step 1** - Download the code from the GH repository (using `GIT`) 
 
@@ -32,6 +32,12 @@ Visit `http://localhost:5085` in your browser. By default a simple [Books](./app
 <br />
 
 ![Django API Generator - API View page for Books Model.](https://user-images.githubusercontent.com/51070104/194476781-6476de62-191a-48e8-8730-344c2d63f9d0.png) 
+
+<br />
+
+## Video Presentation
+
+https://user-images.githubusercontent.com/51070104/194480046-fe920d98-e3ac-4c65-9e70-8b752ffaff05.mp4
 
 <br />
 
