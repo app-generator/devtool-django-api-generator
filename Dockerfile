@@ -13,7 +13,6 @@ COPY . .
 
 # running migrations
 RUN python manage.py makemigrations
-RUN python manage.py makemigrations apps
 RUN python manage.py migrate
 RUN python manage.py generate-api
 
