@@ -1,21 +1,15 @@
 # Django API Generator
 
-The tool is able to generate APIs using Flask, Flask-RestX stack with a minimum effort. For newcomers, Flask is a leading backend framework used to code from simple websites and APIs to complex eCommerce solutions.
+The tool is able to generate APIs using Django, DRF stack with a minimum effort. For newcomers, Django is a leading backend framework used to code from simple websites and APIs to complex eCommerce solutions.
 
 - 👉 Free [support](https://appseed.us/support/) via Email and [Discord](https://discord.gg/fZC6hup)
 - 👉 More [Developer Tools](https://appseed.us/developer-tools/) - provided by AppSeed
 
 <br />
 
-## Video Presentation
-
-https://user-images.githubusercontent.com/51070104/194334755-b5cc63d7-4b64-45b5-bf8e-da92d73bc4ba.mp4
-
-<br />
-
 ## How It Works
 
-> Step #1 - Define models in `apps/models.py`
+> 👉 **Step #1** - Define models in `apps/models.py`
 
 <br />
 
@@ -31,7 +25,7 @@ API_GENERATOR = {
 
 <br />
 
-> Migrate Database
+> 👉 **Step #2** - `Migrate Database`
 
 ```bash
 $ python manage.py makemigrations
@@ -40,7 +34,7 @@ $ python manage.py migrate
 
 <br />
 
-> Generate API 
+> 👉 **Step #3** - `Generate API` 
 
 ```bash
 $ python manage.py generate-api
@@ -50,7 +44,7 @@ $ python manage.py generate-api
 
 <br />
 
-> Use the API 
+> 👉 **Step #4** - `Use the API` 
 
 * Create a book by `POST` request to `/api/books/`
 * Get book that has id = 2 by `GET` request to `/api/books/2/`
@@ -60,7 +54,7 @@ $ python manage.py generate-api
 
 <br />
 
-> API Authentication
+> 👉 **Step #5** - API Authentication
 
 There are 2 models of authentication that you can use.
 
