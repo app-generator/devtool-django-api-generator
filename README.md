@@ -1,4 +1,4 @@
-# Django API Generator
+# [Django API Generator](https://appseed.us/developer-tools/django-api-generator/)
 
 The tool is able to `generate APIs` using **Django & DRF** stack with a minimum effort. For newcomers, **Django** is a leading backend framework used to code from simple websites and APIs to complex eCommerce solutions.
 
@@ -132,4 +132,4 @@ For users authenticated in the app.
 <br />
 
 --- 
-**Django API Generator** - Developer tool provided by [AppSeed](https://appseed.us)
+**[Django API Generator](https://appseed.us/developer-tools/django-api-generator/)** - Developer tool provided by [AppSeed](https://appseed.us)
